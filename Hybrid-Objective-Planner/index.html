@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hybrid Objective Planner</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="app-theme">
+    <header class="app-header">
+      <div class="header__content">
+        <div class="header__row">
+          <div class="header__intro">
+            <h1>Hybrid Objective Planner</h1>
+            <p>
+              Explore the objective catalog, pick the focus areas that match your goals,
+              and monitor how the combination impacts time, interference, and physiological balance.
+            </p>
+          </div>
+          <button
+            type="button"
+            id="profile-entry"
+            class="profile-entry"
+            aria-haspopup="dialog"
+            data-trigger-profile
+          >
+            <span class="profile-entry__icon" aria-hidden="true">👤</span>
+            <span class="profile-entry__text">
+              <strong class="profile-entry__label">Perfil</strong>
+              <small id="profile-entry-status">Completar</small>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <div id="classic-planner-view" class="planner-stage">
+        <section class="objective-column">
+        <section class="panel availability-panel">
+          <div class="panel__header">
+            <span class="panel__eyebrow">Step 1</span>
+            <h2>Weekly availability</h2>
+            <p>Set the time you can consistently dedicate each week. The planner adapts in real time.</p>
+          </div>
+          <div class="availability-panel__controls">
+            <label for="availability-slider">Available hours per week</label>
+            <div class="availability-panel__input">
+              <input
+                id="availability-slider"
+                type="range"
+                min="180"
+                max="1200"
+                step="30"
+                value="420"
+              />
+              <span id="availability-value">7 h</span>
+            </div>
+            <div class="availability-panel__ticks" aria-hidden="true">
+              <span>3h</span>
+              <span>10h</span>
+              <span>20h</span>
+            </div>
+          </div>
+          <div class="balance-bar" aria-live="polite">
+            <div class="balance-bar__fill" id="balance-fill"></div>
+          </div>
+          <div class="balance-summary">
+            <span id="time-summary">0 h of 7 h committed this week.</span>
+            <span id="time-status" class="status status--idle">
+              Select objectives to balance your week.
+            </span>
+          </div>
+        </section>
+
+        <section class="panel objective-catalog">
+          <div class="panel__header">
+            <span class="panel__eyebrow">Step 2</span>
+            <h2>Choose your objectives</h2>
+            <p>Select up to three focus areas. We’ll calculate the impact and keep you on track.</p>
+          </div>
+          <div class="objective-catalog__scroll" role="region">
+            <section class="objectives-grid" id="objectives-container" aria-live="polite"></section>
+          </div>
+        </section>
+        </section>
+
+        <section class="insights-column">
+        <section class="panel insights-hub" aria-live="polite">
+          <div class="insights-kpis">
+            <article class="kpi-card" aria-live="polite">
+              <span class="kpi-card__label">Weekly load</span>
+              <span id="kpi-load-value" class="kpi-card__value">0 h</span>
+              <p id="kpi-load-description" class="kpi-card__description">Set your availability to begin.</p>
+            </article>
+            <article class="kpi-card" aria-live="polite">
+              <span class="kpi-card__label">Objectives</span>
+              <span id="kpi-objectives-value" class="kpi-card__value">0/3</span>
+              <p id="kpi-objectives-description" class="kpi-card__description">Add up to three focus areas.</p>
+            </article>
+            <article class="kpi-card" aria-live="polite">
+              <span class="kpi-card__label">Interference</span>
+              <span id="kpi-interference-value" class="kpi-card__value">—</span>
+              <p id="kpi-interference-description" class="kpi-card__description">Select 2–3 objectives.</p>
+            </article>
+          </div>
+
+          <div class="insight-carousel" data-insight-carousel>
+            <div class="insight-carousel__viewport">
+              <div class="insight-carousel__track" id="insight-carousel-track">
+                <section class="insight-slide is-active" data-slide-index="0" data-slide-label="Interference review">
+                  <header class="insight-slide__header">
+                    <span class="panel__eyebrow">
+                      Interference
+                      <span class="panel__eyebrow-note">
+                        | Track how your objectives overlap and where caution is needed.
+                      </span>
+                    </span>
+                  </header>
+                  <div class="insight-slide__body insight-slide__body--split insight-slide__body--interference">
+                    <article class="thermometer-card">
+                      <div class="thermometer">
+                        <div class="thermometer__segments"></div>
+                        <div class="thermometer__fill" id="thermometer-fill"></div>
+                        <span class="thermometer__value" id="thermometer-value">—</span>
+                      </div>
+                      <p id="thermometer-label" class="thermometer__label">Waiting for selections…</p>
+                    </article>
+                    <article class="insight-card insight-card--reasons">
+                      <p id="interference-summary" class="insight-summary insight-summary--intro">
+                        Select 2–3 objectives to evaluate interference.
+                      </p>
+                      <h4>Key overlaps</h4>
+                      <ul id="interference-reasons" class="insight-list insight-list--bulleted insight-list--dense"></ul>
+                    </article>
+                  </div>
+                </section>
+
+                <section
+                  class="insight-slide"
+                  data-slide-index="1"
+                  data-slide-label="Physiological balance"
+                >
+                  <header class="insight-slide__header">
+                    <span class="panel__eyebrow">
+                      Physiology
+                      <span class="panel__eyebrow-note">| Understand how your picks shape the overall profile.</span>
+                    </span>
+                  </header>
+                  <div class="insight-slide__body insight-slide__body--split">
+                    <div class="physiology-radar">
+                      <canvas
+                        id="profileRadar"
+                        role="img"
+                        aria-label="Radar chart showing the combined physiological profile"
+                      ></canvas>
+                    </div>
+                    <div class="insight-card__details-wrapper">
+                      <dl id="physiological-breakdown" class="balance-list"></dl>
+                      <p id="physiological-summary" class="insight-summary">Waiting for selections…</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section
+                  class="insight-slide"
+                  data-slide-index="2"
+                  data-slide-label="Plan summary"
+                >
+                  <header class="insight-slide__header">
+                    <span class="panel__eyebrow">
+                      Plan summary
+                      <span class="panel__eyebrow-note">| Review total load, guidance, and your selected objectives.</span>
+                    </span>
+                  </header>
+                  <div class="insight-slide__body insight-slide__body--grid">
+                    <article class="insight-card">
+                      <p id="load-summary-total" class="insight-summary">No objectives selected yet.</p>
+                      <ul id="load-summary-distribution" class="insight-list insight-list--inline"></ul>
+                    </article>
+                    <article class="insight-card insight-card--suggestion">
+                      <div id="training-suggestion" class="insight-summary insight-summary--stack">
+                        Add objectives to receive tailored suggestions.
+                      </div>
+                    </article>
+                    <article class="insight-card selection-summary">
+                      <ul id="selected-list" class="selected-list"></ul>
+                    </article>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="insight-carousel__status">
+            <button
+              type="button"
+              class="carousel-nav carousel-nav--prev"
+              data-carousel-dir="prev"
+              aria-label="Previous insight"
+            >
+              <span aria-hidden="true">←</span>
+            </button>
+            <div class="insight-carousel__status-text">
+              <span id="insight-carousel-label">Interference review</span>
+              <span id="insight-carousel-progress">1/3</span>
+            </div>
+            <button
+              type="button"
+              class="carousel-nav carousel-nav--next"
+              data-carousel-dir="next"
+              aria-label="Next insight"
+            >
+              <span aria-hidden="true">→</span>
+            </button>
+          </div>
+          <div class="progress-cta">
+            <div class="progress-cta__copy">
+              <h3>Progress Planner</h3>
+              <p>Guarda tu perfil y tus métricas clave para proyectar tus próximos 90 días.</p>
+            </div>
+            <button type="button" id="open-progress-planner" class="button button--primary">
+              Continuar a Progress Planner
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <section
+        id="progress-planner-view"
+        class="progress-planner is-hidden"
+        aria-live="polite"
+        aria-label="Progress Planner dashboard"
+      >
+        <header class="progress-planner__header">
+          <div>
+            <span class="panel__eyebrow">Progress Planner</span>
+            <h2>Projection dashboard</h2>
+            <p>Keep your selected objectives and project 12-week progress with your real-life constraints.</p>
+          </div>
+          <div class="progress-planner__actions">
+            <button type="button" class="ghost-button" id="progress-planner-back">Volver al planner</button>
+            <button type="button" class="ghost-button ghost-button--accent" data-trigger-profile>
+              Editar perfil
+            </button>
+          </div>
+        </header>
+
+        <div class="progress-planner__summary" id="progress-summary-cards" aria-live="polite">
+          <article class="summary-card" data-summary-card="adherence">
+            <p class="summary-card__label">Adherencia</p>
+            <strong id="summary-adherence-value">—</strong>
+            <span id="summary-adherence-note">Completa tu perfil para estimar.</span>
+          </article>
+          <article class="summary-card" data-summary-card="availability">
+            <p class="summary-card__label">Disponibilidad vs mínimo</p>
+            <strong id="summary-availability-value">—</strong>
+            <span id="summary-availability-note">Sin objetivos activos.</span>
+          </article>
+          <article class="summary-card" data-summary-card="recovery">
+            <p class="summary-card__label">Recuperación</p>
+            <strong id="summary-recovery-value">—</strong>
+            <span id="summary-recovery-note">Configura tu estado actual.</span>
+          </article>
+          <article class="summary-card" data-summary-card="interference">
+            <p class="summary-card__label">Interferencia</p>
+            <strong id="summary-interference-value">—</strong>
+            <span id="summary-interference-note">Requiere 2-3 objetivos.</span>
+          </article>
+          <article class="summary-card" data-summary-card="resources">
+            <p class="summary-card__label">Recursos</p>
+            <strong id="summary-resources-value">—</strong>
+            <span id="summary-resources-note">Indica con qué cuentas.</span>
+          </article>
+        </div>
+
+        <section class="panel progress-panel">
+          <div class="progress-panel__header">
+            <div>
+              <h3>Proyección de 12 semanas</h3>
+              <p id="projection-panel-status">
+                Completa el perfil y registra tus métricas actuales para generar la proyección.
+              </p>
+            </div>
+          </div>
+          <div class="projection-chart__wrapper">
+            <canvas id="projectionChart" aria-label="Projected progress chart" role="img"></canvas>
+            <p id="projection-chart-empty" class="empty-state">
+              Agrega métricas para cada objetivo para ver trayectorias estimadas.
+            </p>
+          </div>
+          <div class="projection-insights">
+            <div>
+              <h4>Resumen por métrica</h4>
+              <ul id="projection-summary-list" class="insight-list insight-list--bulleted"></ul>
+            </div>
+            <div>
+              <h4>Ejes que penalizan más</h4>
+              <ul id="projection-interference-list" class="insight-list insight-list--bulleted"></ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel metrics-panel">
+          <div class="progress-panel__header">
+            <div>
+              <h3>Métricas por objetivo</h3>
+              <p>
+                Selecciona la métrica que quieres seguir para cada objetivo y guarda el valor actual para alimentar las
+                proyecciones.
+              </p>
+            </div>
+          </div>
+          <div id="metric-selection-grid" class="metric-grid" aria-live="polite"></div>
+          <div id="progress-selected-list" class="progress-selected"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+    </footer>
+
+    <div
+      id="user-profile-modal"
+      class="modal profile-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="profile-modal-title"
+    >
+      <div class="modal__backdrop" data-profile-dismiss></div>
+      <div class="modal__dialog profile-modal__dialog" role="document">
+        <header class="profile-modal__header">
+          <div>
+            <span class="panel__eyebrow">Perfil</span>
+            <h2 id="profile-modal-title">Configura tu contexto</h2>
+            <p class="profile-modal__subtitle">
+              Guardamos esta información en tu navegador para ajustar las proyecciones y nunca la enviamos a un
+              servidor.
+            </p>
+          </div>
+          <button type="button" class="modal__close" data-profile-dismiss aria-label="Cerrar modal">×</button>
+        </header>
+        <form id="user-profile-form" class="profile-form">
+          <div id="profile-modal-feedback" class="profile-modal__feedback" role="alert" aria-live="assertive"></div>
+          <section class="profile-form__group" id="profile-basics-fields"></section>
+          <section class="profile-form__group">
+            <h3>Experiencia por disciplina</h3>
+            <div id="profile-experience-fields" class="profile-form__grid"></div>
+          </section>
+          <section class="profile-form__group profile-form__group--split">
+            <div id="profile-recovery-fields"></div>
+            <div id="profile-adherence-fields"></div>
+          </section>
+          <section class="profile-form__group">
+            <h3>Recursos disponibles</h3>
+            <div id="profile-resources-fields" class="profile-form__grid profile-form__grid--tags"></div>
+          </section>
+          <footer class="profile-form__actions">
+            <button type="button" class="ghost-button" data-profile-dismiss>Cancelar</button>
+            <button type="submit" class="button button--primary">Guardar perfil</button>
+          </footer>
+        </form>
+      </div>
+    </div>
+
+    <div id="selection-modal" class="modal" aria-hidden="true" role="alertdialog" aria-modal="true">
+      <div class="modal__backdrop" data-modal-dismiss></div>
+      <div class="modal__dialog" role="document">
+        <h2 class="modal__title">Selection limit reached</h2>
+        <p id="selection-modal-message" class="modal__message">
+          You can select up to three objectives at a time. Deselect one to add a different focus.
+        </p>
+        <button type="button" class="modal__close" data-modal-dismiss>Understood</button>
+      </div>
+    </div>
+
+    <section class="selection-feedback" aria-live="polite" role="status">
+      <span class="selection-feedback__icon" aria-hidden="true"></span>
+      <p id="selection-message"></p>
+      <button type="button" class="selection-feedback__close" aria-label="Dismiss notification">
+        ×
+      </button>
+    </section>
+
+    <script src="vendor/core-js-bundle.min.js"></script>
+    <script src="vendor/regenerator-runtime.min.js"></script>
+    <script src="vendor/whatwg-fetch.umd.js"></script>
+    <script src="vendor/chart.umd.min.js"></script>
+    <script src="app.legacy.js"></script>
+  </body>
+</html>

@@ -1,0 +1,93 @@
+{
+  "disciplines": [
+    {
+      "id": "hypertrophy",
+      "label": "Hipertrofia",
+      "base_weight": 0.55,
+      "axes": {
+        "structural": 0.35,
+        "hormonal": 0.25,
+        "metabolic": 0.2,
+        "local": 0.2
+      }
+    },
+    {
+      "id": "strength",
+      "label": "Fuerza máxima",
+      "base_weight": 0.65,
+      "axes": {
+        "neuromuscular": 0.35,
+        "structural": 0.25,
+        "hormonal": 0.2,
+        "psycho": 0.2
+      }
+    },
+    {
+      "id": "relative_strength",
+      "label": "Fuerza relativa",
+      "base_weight": 0.6,
+      "axes": {
+        "neuromuscular": 0.3,
+        "local": 0.25,
+        "complexity": 0.25,
+        "psycho": 0.2
+      }
+    },
+    {
+      "id": "endurance",
+      "label": "Resistencia",
+      "base_weight": 0.5,
+      "axes": {
+        "cardio": 0.35,
+        "metabolic": 0.35,
+        "energy": 0.2,
+        "psycho": 0.1
+      }
+    },
+    {
+      "id": "hybrid",
+      "label": "Capacidad híbrida",
+      "base_weight": 0.55,
+      "axes": {
+        "cardio": 0.25,
+        "neuromuscular": 0.25,
+        "metabolic": 0.25,
+        "psycho": 0.25
+      }
+    },
+    {
+      "id": "power_speed",
+      "label": "Potencia y velocidad",
+      "base_weight": 0.6,
+      "axes": {
+        "neuromuscular": 0.35,
+        "complexity": 0.2,
+        "psycho": 0.25,
+        "structural": 0.2
+      }
+    },
+    {
+      "id": "mobility",
+      "label": "Movilidad",
+      "base_weight": 0.35,
+      "axes": {
+        "structural": 0.3,
+        "local": 0.3,
+        "psycho": 0.2,
+        "complexity": 0.2
+      }
+    },
+    {
+      "id": "motor_control",
+      "label": "Control motor",
+      "base_weight": 0.4,
+      "axes": {
+        "complexity": 0.4,
+        "neuromuscular": 0.25,
+        "psycho": 0.2,
+        "local": 0.15
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,384 @@
+{
+  "categories": [
+    {
+      "id": "body_composition",
+      "title": "Body Composition",
+      "short_description": "Adjust your muscle mass and body fat sustainably.",
+      "detailed_description": "Work on visible and measurable physical changes while prioritizing metabolic health: increase muscle mass, reduce fat, or maintain stability according to your context and preferences.",
+      "metrics_tracked": [
+        "Body weight (kg)",
+        "Body fat percentage (%)",
+        "Waist circumference (cm)",
+        "Lean mass estimate (kg)",
+        "Progress photos (weekly)"
+      ],
+      "objectives": [
+        {
+          "id": "gain_muscle_mass",
+          "title": "Gain muscle mass",
+          "description": "Increase muscle size and quality through strength training and growth-oriented nutrition.",
+          "min_weekly_time_hours": 4.5,
+          "tags": [
+            "hypertrophy",
+            "aesthetics",
+            "beginner_friendly",
+            "intermediate"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on hypertrophy training, and complements it with max strength work to build muscle mass."
+        },
+        {
+          "id": "lose_body_fat",
+          "title": "Lose body fat",
+          "description": "Reduce body fat percentage and total weight while prioritizing health, adherence, and visual change.",
+          "min_weekly_time_hours": 4,
+          "tags": [
+            "fat_loss",
+            "metabolic_health",
+            "beginner_friendly"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on hypertrophy training, and complements it with max strength, aerobic conditioning, targeted intervals, and core stability work to lose body fat."
+        },
+        {
+          "id": "recomposition_cut",
+          "title": "Body recomposition (Cut)",
+          "description": "Maintain or increase muscle mass while reducing fat for a more defined and athletic look.",
+          "min_weekly_time_hours": 4,
+          "tags": [
+            "recomposition",
+            "aesthetics",
+            "intermediate"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on hypertrophy training, and complements it with max strength, aerobic base, interval, and core stability work to cut body fat while preserving muscle."
+        },
+        {
+          "id": "maintain_current_shape",
+          "title": "Maintain current shape",
+          "description": "Preserve your current muscle mass, body fat, and performance without seeking visible changes.",
+          "min_weekly_time_hours": 2.5,
+          "tags": [
+            "maintenance",
+            "beginner_friendly",
+            "lifestyle"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on hypertrophy training, and complements it with max strength, aerobic base, core, mobility, and muscular endurance work to maintain your current shape."
+        }
+      ]
+    },
+    {
+      "id": "strength_performance",
+      "title": "Strength Performance",
+      "short_description": "Improve your maximum and relative strength with solid technique.",
+      "detailed_description": "Focus on absolute strength (powerlifting), relative strength (calisthenics), and general strength development with structured progression and technical control.",
+      "metrics_tracked": [
+        "Squat 1RM (kg)",
+        "Bench press 1RM (kg)",
+        "Deadlift 1RM (kg)",
+        "Overhead press 1RM (kg)",
+        "Max pull-ups (reps)",
+        "1RM estimation (Epley)"
+      ],
+      "objectives": [
+        {
+          "id": "increase_max_strength_powerlifting",
+          "title": "Increase max strength (Powerlifting)",
+          "description": "Increase your absolute strength in squat, bench press, and deadlift.",
+          "min_weekly_time_hours": 4,
+          "tags": [
+            "powerlifting",
+            "strength",
+            "advanced",
+            "competition_ready"
+          ],
+          "competition_available": true,
+          "competition": {
+            "enabled": false,
+            "options": [
+              "Total 1RM",
+              "Squat 1RM",
+              "Bench press 1RM",
+              "Deadlift 1RM"
+            ],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on max strength training, and complements it with accessory hypertrophy, speed work, and technical practice to increase your powerlifting total."
+        },
+        {
+          "id": "increase_relative_strength_calisthenics",
+          "title": "Increase relative strength (Calisthenics)",
+          "description": "Improve your ability to move your body weight in weighted pull-ups and control skills such as planche or front lever.",
+          "min_weekly_time_hours": 3.5,
+          "tags": [
+            "calisthenics",
+            "relative_strength",
+            "advanced",
+            "skill_practice"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on calisthenic strength, and complements it with skill-specific hypertrophy, lever technique, and core stability work to boost relative strength."
+        },
+        {
+          "id": "increase_general_strength",
+          "title": "Increase general strength",
+          "description": "Develop overall strength without focusing on a single discipline through well-executed basic patterns.",
+          "min_weekly_time_hours": 3,
+          "tags": [
+            "strength",
+            "beginner_friendly",
+            "intermediate"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on max strength training, and complements it with hypertrophy, power, and core stability work to increase overall strength."
+        }
+      ]
+    },
+    {
+      "id": "cardiovascular_performance",
+      "title": "Cardiovascular Performance",
+      "short_description": "Improve your aerobic and high-intensity endurance.",
+      "detailed_description": "Optimize your cardiorespiratory capacity with training focused on continuous endurance, specific paces, and high-intensity efforts.",
+      "metrics_tracked": [
+        "5K (time)",
+        "10K (time)",
+        "Half marathon (time)",
+        "Marathon (time)",
+        "Estimated VO₂max",
+        "Resting heart rate (bpm)"
+      ],
+      "objectives": [
+        {
+          "id": "improve_aerobic_endurance",
+          "title": "Improve aerobic endurance",
+          "description": "Increase your ability to sustain long, steady efforts by improving economy and aerobic base.",
+          "min_weekly_time_hours": 3,
+          "tags": [
+            "endurance",
+            "aerobic",
+            "beginner_friendly"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on aerobic base running, and complements it with tempo and VO2 max efforts to improve endurance."
+        },
+        {
+          "id": "improve_anaerobic_endurance",
+          "title": "Improve anaerobic or high-intensity endurance",
+          "description": "Develop the ability to perform short, powerful, and repeated efforts to perform better in intense or functional training.",
+          "min_weekly_time_hours": 2.5,
+          "tags": [
+            "hiit",
+            "intervals",
+            "conditioning",
+            "intermediate"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on glycolytic HIIT work, and complements it with VO2 max intervals, aerobic base sessions, sprint efforts, and injury-prevention training to improve anaerobic endurance."
+        },
+        {
+          "id": "prepare_running_competition",
+          "title": "Prepare for running competition",
+          "description": "Train to improve times or complete specific distances such as 5K, 10K, half marathon, or marathon.",
+          "min_weekly_time_hours": 4.5,
+          "tags": [
+            "running_competition",
+            "endurance",
+            "race_prep"
+          ],
+          "competition_available": true,
+          "competition": {
+            "enabled": false,
+            "options": [
+              "5K",
+              "10K",
+              "Half marathon",
+              "Marathon"
+            ],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on race-specific running endurance, and complements it with tempo work, speed development, and technique and injury-prevention drills to excel in competition."
+        }
+      ]
+    },
+    {
+      "id": "functional_hybrid_performance",
+      "title": "Functional / Hybrid Performance",
+      "short_description": "Balance strength and endurance to perform in mixed tests.",
+      "detailed_description": "Improve your overall performance by combining strength, endurance, and technique for functional environments, hybrid tests, or specific preparations.",
+      "metrics_tracked": [
+        "HYROX time (total)",
+        "Functional benchmark time (e.g., \"Murph\")",
+        "Total load in mixed sessions (kg)",
+        "Session RPE (0–10)",
+        "Loaded carry distance (m)"
+      ],
+      "objectives": [
+        {
+          "id": "develop_hybrid_fitness",
+          "title": "Develop overall physical performance (balanced strength + endurance)",
+          "description": "Improve your total capacity by combining strength, endurance, and technique; ideal for functional training, HYROX, or military tests.",
+          "min_weekly_time_hours": 5,
+          "tags": [
+            "hybrid",
+            "functional_fitness",
+            "advanced",
+            "competition_optional"
+          ],
+          "competition_available": true,
+          "competition": {
+            "enabled": false,
+            "options": [
+              "HYROX",
+              "Crossfit",
+              "Military physical test",
+              "Spartan Race"
+            ],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on mixed metabolic conditioning, and complements it with max strength, aerobic base, core stability, and strongman-style carry work to develop hybrid fitness."
+        }
+      ]
+    },
+    {
+      "id": "mobility_control_wellbeing",
+      "title": "Mobility, Control and Wellbeing",
+      "short_description": "Move better, with more range and fewer discomforts.",
+      "detailed_description": "Increase your range of motion, motor control, and coordination to move fluidly, prevent injuries, and improve overall wellbeing.",
+      "metrics_tracked": [
+        "Sit-and-reach (cm)",
+        "Active straight leg raise (°)",
+        "Ankle dorsiflexion (cm, knee-to-wall test)",
+        "Shoulder flexion (°)",
+        "Perceived discomfort scale (0–10)"
+      ],
+      "objectives": [
+        {
+          "id": "improve_mobility_flexibility",
+          "title": "Improve mobility and functional flexibility",
+          "description": "Increase range of motion and body freedom to move fluidly and prevent injuries.",
+          "min_weekly_time_hours": 2,
+          "tags": [
+            "mobility",
+            "recovery",
+            "beginner_friendly"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on functional mobility work, and complements it with core stability and injury-prevention training to improve mobility and flexibility."
+        },
+        {
+          "id": "improve_stability_balance_coordination",
+          "title": "Improve stability, balance, and coordination",
+          "description": "Develop body control, posture, and coordination to move with more precision and safety.",
+          "min_weekly_time_hours": 2,
+          "tags": [
+            "motor_control",
+            "injury_prevention",
+            "beginner_friendly"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on core stability, and complements it with postural control practice, functional mobility, speed and agility drills, and injury-prevention work to enhance balance and coordination."
+        }
+      ]
+    },
+    {
+      "id": "power_speed_agility",
+      "title": "Power, Speed and Agility",
+      "short_description": "Be more explosive, faster, and more agile.",
+      "detailed_description": "Develop the ability to generate force explosively and improve movement and direction changes, useful for sports and advanced performance.",
+      "metrics_tracked": [
+        "Vertical jump (cm)",
+        "Horizontal jump (cm)",
+        "Sprint 10 m (s)",
+        "5-10-5 pro-agility test (s)",
+        "Medicine ball throw (m)",
+        "Estimated peak power (W)"
+      ],
+      "objectives": [
+        {
+          "id": "improve_power_speed_agility",
+          "title": "Improve power, speed, and agility",
+          "description": "Increase explosiveness, movement speed, and agility in direction changes.",
+          "min_weekly_time_hours": 3,
+          "tags": [
+            "athleticism",
+            "speed",
+            "power",
+            "intermediate"
+          ],
+          "competition_available": false,
+          "competition": {
+            "enabled": false,
+            "options": [],
+            "selected_option": "",
+            "target_mark": ""
+          },
+          "stimulus_summary": "This plan focuses mainly on explosive power training, and complements it with speed, plyometric, sprint, and max strength work to improve power, speed, and agility."
+        }
+      ]
+    }
+  ]
+}

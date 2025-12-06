@@ -1,0 +1,224 @@
+{
+  "objectives": [
+    {
+      "id": "gain_muscle_mass",
+      "disciplines_weights": {
+        "Hypertrophy": 0.65,
+        "Max Strength": 0.15,
+        "Local Muscular Endurance": 0.05,
+        "Core Stability": 0.07,
+        "Mobility": 0.05,
+        "Aerobic Base": 0.03
+      }
+    },
+    {
+      "id": "lose_body_fat",
+      "disciplines_weights": {
+        "Hypertrophy": 0.3,
+        "Max Strength": 0.22,
+        "Glycolytic HIIT": 0.08,
+        "VO₂max": 0.05,
+        "Aerobic Base": 0.2,
+        "Core Stability": 0.1,
+        "Mobility": 0.05
+      }
+    },
+    {
+      "id": "recomposition_cut",
+      "disciplines_weights": {
+        "Hypertrophy": 0.42,
+        "Max Strength": 0.22,
+        "Aerobic Base": 0.12,
+        "Glycolytic HIIT": 0.08,
+        "Core Stability": 0.11,
+        "Mobility": 0.05
+      }
+    },
+    {
+      "id": "maintain_current_shape",
+      "disciplines_weights": {
+        "Hypertrophy": 0.28,
+        "Max Strength": 0.2,
+        "Aerobic Base": 0.22,
+        "Core Stability": 0.1,
+        "Mobility": 0.1,
+        "Local Muscular Endurance": 0.1
+      }
+    },
+    {
+      "id": "increase_max_strength_powerlifting",
+      "disciplines_weights": {
+        "Max Strength": 0.5,
+        "Hypertrophy (Accessory Work)": 0.15,
+        "Power (Speed Work)": 0.1,
+        "Specific Technique": 0.15,
+        "Core Stability": 0.08,
+        "Aerobic Base": 0.02
+      }
+    },
+    {
+      "id": "increase_relative_strength_calisthenics",
+      "disciplines_weights": {
+        "Calisthenic Strength": 0.47,
+        "Specific Hypertrophy": 0.18,
+        "Specific Technique (Levers)": 0.13,
+        "Core Stability": 0.12,
+        "Mobility": 0.06,
+        "Injury Prevention / GPP": 0.04
+      }
+    },
+    {
+      "id": "increase_general_strength",
+      "disciplines_weights": {
+        "Max Strength": 0.3,
+        "Hypertrophy": 0.3,
+        "Power": 0.15,
+        "Core Stability": 0.1,
+        "Specific Technique": 0.05,
+        "Mobility": 0.05,
+        "Aerobic Base": 0.05
+      }
+    },
+    {
+      "id": "improve_aerobic_endurance",
+      "disciplines_weights": {
+        "Aerobic Base (Z1–Z2)": 0.6,
+        "Threshold / Tempo": 0.2,
+        "VO₂max": 0.1,
+        "Running Technique": 0.05,
+        "Injury Prevention / GPP": 0.05
+      }
+    },
+    {
+      "id": "improve_anaerobic_endurance",
+      "disciplines_weights": {
+        "Glycolytic HIIT": 0.25,
+        "VO₂max": 0.25,
+        "Anaerobic Alactic Sprint": 0.1,
+        "Aerobic Base": 0.25,
+        "Running Technique": 0.05,
+        "Injury Prevention / GPP": 0.1
+      }
+    },
+    {
+      "id": "prepare_running_competition",
+      "disciplines_weights": {
+        "5K": {
+          "VO₂max": 0.3,
+          "Threshold": 0.25,
+          "Aerobic Base": 0.25,
+          "Anaerobic Alactic Sprint": 0.1,
+          "Running Technique": 0.05,
+          "Injury Prevention / GPP": 0.05
+        },
+        "10K": {
+          "Threshold": 0.3,
+          "Aerobic Base": 0.35,
+          "VO₂max": 0.2,
+          "Running Technique": 0.05,
+          "Injury Prevention / GPP": 0.1
+        },
+        "Half Marathon": {
+          "Aerobic Base": 0.45,
+          "Threshold": 0.3,
+          "VO₂max": 0.1,
+          "Running Technique": 0.05,
+          "Injury Prevention / GPP": 0.1
+        },
+        "Marathon": {
+          "Aerobic Base": 0.55,
+          "Threshold": 0.25,
+          "VO₂max": 0.05,
+          "Running Technique": 0.05,
+          "Injury Prevention / GPP": 0.1
+        }
+      }
+    },
+    {
+      "id": "develop_hybrid_fitness",
+      "disciplines_weights": {
+        "HYROX": {
+          "Mixed Metabolic Conditioning (Task-Based)": 0.3,
+          "Max Strength": 0.12,
+          "Core Stability": 0.08,
+          "Aerobic Base": 0.17,
+          "Threshold / Tempo": 0.12,
+          "Hypertrophy (Useful Accessories)": 0.05,
+          "Local Muscular Endurance": 0.06,
+          "Strongman / Load & Carry": 0.1
+        },
+        "Crossfit": {
+          "Mixed Metabolic Conditioning (Task-Based)": 0.35,
+          "Max Strength": 0.18,
+          "Core Stability": 0.08,
+          "Aerobic Base": 0.1,
+          "Threshold / Tempo": 0.08,
+          "Hypertrophy (Useful Accessories)": 0.08,
+          "Local Muscular Endurance": 0.08,
+          "Strongman / Load & Carry": 0.05
+        },
+        "Military physical test": {
+          "Mixed Metabolic Conditioning (Task-Based)": 0.2,
+          "Max Strength": 0.15,
+          "Core Stability": 0.1,
+          "Aerobic Base": 0.25,
+          "Threshold / Tempo": 0.12,
+          "Hypertrophy (Useful Accessories)": 0.06,
+          "Local Muscular Endurance": 0.07,
+          "Strongman / Load & Carry": 0.05
+        },
+        "Spartan Race": {
+          "Mixed Metabolic Conditioning (Task-Based)": 0.25,
+          "Max Strength": 0.1,
+          "Core Stability": 0.1,
+          "Aerobic Base": 0.25,
+          "Threshold / Tempo": 0.12,
+          "Hypertrophy (Useful Accessories)": 0.05,
+          "Local Muscular Endurance": 0.08,
+          "Strongman / Load & Carry": 0.05
+        }
+      }
+    },
+    {
+      "id": "improve_mobility_flexibility",
+      "disciplines_weights": {
+        "Functional Mobility": 0.55,
+        "Core Stability": 0.15,
+        "Injury Prevention / GPP": 0.2,
+        "Specific Technique (Motor Control)": 0.05,
+        "Very Light Aerobic Base": 0.05
+      }
+    },
+    {
+      "id": "improve_stability_balance_coordination",
+      "disciplines_weights": {
+        "Core Stability": 0.5,
+        "Specific Technique (Postural Control)": 0.15,
+        "Functional Mobility": 0.15,
+        "SAQ (Low Fatigue)": 0.1,
+        "Injury Prevention / GPP": 0.1
+      }
+    },
+    {
+      "id": "improve_power_speed_agility",
+      "disciplines_weights": {
+        "Intermediate / Advanced": {
+          "Power (Low–Moderate Load, Max Intent)": 0.28,
+          "SAQ (Acceleration / COD)": 0.24,
+          "Plyometrics (Fast SSC)": 0.2,
+          "Anaerobic Alactic Sprint": 0.1,
+          "Max Strength": 0.13,
+          "Core Stability": 0.05
+        },
+        "Beginner": {
+          "Max Strength": 0.2,
+          "Power": 0.25,
+          "SAQ": 0.25,
+          "Plyometrics": 0.15,
+          "Anaerobic Alactic Sprint": 0.1,
+          "Core Stability": 0.05
+        }
+      }
+    }
+  ]
+}

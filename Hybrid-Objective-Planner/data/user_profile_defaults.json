@@ -1,0 +1,100 @@
+{
+  "age_range": { "min": 16, "max": 80, "default": 30 },
+  "weight_range": { "min": 45, "max": 160, "default": 72, "unit": "kg" },
+  "height_range": { "min": 150, "max": 205, "default": 172, "unit": "cm" },
+  "genders": [
+    { "id": "female", "label": "Femenino" },
+    { "id": "male", "label": "Masculino" },
+    { "id": "non_binary", "label": "No binario" },
+    { "id": "prefer_no_say", "label": "Prefiero no decir" }
+  ],
+  "disciplines": [
+    { "id": "hypertrophy", "label": "Hipertrofia / composición", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "strength", "label": "Fuerza máxima", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "relative_strength", "label": "Fuerza relativa / calistenia", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "endurance", "label": "Resistencia aeróbica", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "power_speed", "label": "Potencia / velocidad", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "mobility", "label": "Movilidad", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "motor_control", "label": "Control motor / estabilidad", "experience_options": ["novice", "intermediate", "advanced"] },
+    { "id": "hybrid", "label": "Capacidad híbrida", "experience_options": ["novice", "intermediate", "advanced"] }
+  ],
+  "experience_levels": {
+    "novice": { "label": "Principiante", "description": "Menos de 1 año consistente" },
+    "intermediate": { "label": "Intermedio", "description": "1-3 años consistentes" },
+    "advanced": { "label": "Avanzado", "description": "3+ años con programación estructurada" }
+  },
+  "default_experience": "intermediate",
+  "recovery_states": [
+    {
+      "id": "fresh",
+      "label": "Recuperado",
+      "modifier": 1.05,
+      "description": "Duermes 7-8h, bajo estrés y pocas molestias."
+    },
+    {
+      "id": "stable",
+      "label": "Estable",
+      "modifier": 1,
+      "description": "Duermes 6-7h, cargas manejables y sin dolor notable."
+    },
+    {
+      "id": "lagging",
+      "label": "Cansado",
+      "modifier": 0.9,
+      "description": "Estrés alto, sueño irregular o molestias constantes."
+    }
+  ],
+  "adherence_levels": [
+    {
+      "id": "high",
+      "label": "90-100% de sesiones",
+      "modifier": 1,
+      "description": "Pierdes 0-1 sesión al mes."
+    },
+    {
+      "id": "medium",
+      "label": "75-90% de sesiones",
+      "modifier": 0.88,
+      "description": "Pierdes 1-2 sesiones al mes."
+    },
+    {
+      "id": "low",
+      "label": "< 75% de sesiones",
+      "modifier": 0.72,
+      "description": "Requiere mejorar hábitos y señales externas."
+    }
+  ],
+  "resource_options": [
+    {
+      "id": "full_gym",
+      "label": "Gimnasio completo",
+      "modifier": 0.05,
+      "description": "Rack, barras, máquinas y accesorios."
+    },
+    {
+      "id": "garage_setup",
+      "label": "Home / garage gym",
+      "modifier": 0.03,
+      "description": "Barra, kettlebells y equipamiento básico."
+    },
+    {
+      "id": "track",
+      "label": "Pista o zona plana",
+      "modifier": 0.02,
+      "description": "Espacio dedicado para trabajar ritmos."
+    },
+    {
+      "id": "conditioning_tools",
+      "label": "Ergs (rower, bike, ski)",
+      "modifier": 0.03,
+      "description": "Permite controlar el estímulo interno."
+    },
+    {
+      "id": "mobility_tools",
+      "label": "Herramientas de movilidad",
+      "modifier": 0.01,
+      "description": "Barras, foam roller, bandas, etc."
+    }
+  ]
+}
+

@@ -1,0 +1,91 @@
+[
+  {
+    "discipline": "hypertrophy",
+    "metric_label": "Lean mass / girths",
+    "unit": "%",
+    "color": "#f472b6",
+    "base_rates": {
+      "novice": 0.035,
+      "intermediate": 0.022,
+      "advanced": 0.012
+    }
+  },
+  {
+    "discipline": "strength",
+    "metric_label": "1RM strength",
+    "unit": "%",
+    "color": "#f97316",
+    "base_rates": {
+      "novice": 0.04,
+      "intermediate": 0.025,
+      "advanced": 0.015
+    }
+  },
+  {
+    "discipline": "relative_strength",
+    "metric_label": "Relative strength",
+    "unit": "%",
+    "color": "#fb7185",
+    "base_rates": {
+      "novice": 0.032,
+      "intermediate": 0.02,
+      "advanced": 0.012
+    }
+  },
+  {
+    "discipline": "endurance",
+    "metric_label": "Endurance pace / VO₂",
+    "unit": "%",
+    "color": "#34d399",
+    "base_rates": {
+      "novice": 0.03,
+      "intermediate": 0.02,
+      "advanced": 0.012
+    }
+  },
+  {
+    "discipline": "hybrid",
+    "metric_label": "Hybrid fitness score",
+    "unit": "%",
+    "color": "#c084fc",
+    "base_rates": {
+      "novice": 0.03,
+      "intermediate": 0.02,
+      "advanced": 0.013
+    }
+  },
+  {
+    "discipline": "power_speed",
+    "metric_label": "Power & speed",
+    "unit": "%",
+    "color": "#38bdf8",
+    "base_rates": {
+      "novice": 0.03,
+      "intermediate": 0.02,
+      "advanced": 0.013
+    }
+  },
+  {
+    "discipline": "mobility",
+    "metric_label": "Range of motion",
+    "unit": "%",
+    "color": "#8b5cf6",
+    "base_rates": {
+      "novice": 0.028,
+      "intermediate": 0.02,
+      "advanced": 0.012
+    }
+  },
+  {
+    "discipline": "motor_control",
+    "metric_label": "Motor control",
+    "unit": "%",
+    "color": "#facc15",
+    "base_rates": {
+      "novice": 0.026,
+      "intermediate": 0.018,
+      "advanced": 0.011
+    }
+  }
+]
+
